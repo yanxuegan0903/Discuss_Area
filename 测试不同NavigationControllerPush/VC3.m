@@ -1,64 +1,46 @@
 //
-//  VC2.m
+//  VC3.m
 //  测试不同NavigationControllerPush
 //
-//  Created by vsKing on 2016/11/23.
+//  Created by vsKing on 2016/11/24.
 //  Copyright © 2016年 vsKing. All rights reserved.
 //
 
-#import "VC2.h"
 #import "VC3.h"
 
-
-
-@interface VC2 ()<UIGestureRecognizerDelegate>
+@interface VC3 ()
 
 @end
 
-@implementation VC2
+@implementation VC3
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-//    [self.navigationController setNavigationBarHidden:YES];
-    self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor grayColor];
     
-//    self.navigationController.interactivePopGestureRecognizer.delegate =  self;
+    
+    
+    
+    
 }
+
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [self.navigationController setNavigationBarHidden:YES animated:YES];
-    self.view.backgroundColor = [UIColor whiteColor];
     
-    
+    self.view.backgroundColor = [UIColor purpleColor];
     
     UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(50, 50, 100, 45)];
     [self.view addSubview:btn];
     btn.backgroundColor = [UIColor whiteColor];
-    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
-    [btn setTitle:@"第二个页面" forState:UIControlStateNormal];
+//    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTitle:@"第三个页面" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     
-}
-
-- (void)clickBtn
-{
-    VC3 * vc3 = [VC3 new];
-    [self.navigationController pushViewController:vc3 animated:YES];
-}
-
-
-
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    if (self.navigationController.viewControllers.count <= 1 ) {
-        return NO;
-    }
-    
-    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

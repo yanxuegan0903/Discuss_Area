@@ -23,7 +23,6 @@
     [super viewWillAppear:animated];
     
 //    self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     
@@ -36,11 +35,11 @@
     
     self.view.backgroundColor = [UIColor redColor];
     
-    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(50, 50, 80, 45)];
+    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(50, 50, 100, 45)];
     [self.view addSubview:btn];
     btn.backgroundColor = [UIColor whiteColor];
     [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
-    [btn setTitle:@"点我啊" forState:UIControlStateNormal];
+    [btn setTitle:@"第一个页面" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     
     
@@ -50,7 +49,6 @@
 {
     VC2 * vc2 = [VC2 new];
     [self.navigationController pushViewController:vc2 animated:YES];
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 

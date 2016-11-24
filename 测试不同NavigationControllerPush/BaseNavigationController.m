@@ -25,7 +25,9 @@
     
     
     
-    NSLog(@"frame = %@",NSStringFromCGRect(self.navigationBar.frame));
+    
+    
+    
 //    UIView * navigationBarView = [[UIView alloc]initWithFrame:self.navigationBar.frame];
 //    navigationBarView.backgroundColor = [UIColor purpleColor];
 //    [self.navigationBar addSubview:navigationBarView];
