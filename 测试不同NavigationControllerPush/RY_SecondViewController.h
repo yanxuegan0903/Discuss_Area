@@ -1,5 +1,5 @@
 //
-//  VC1.h
+//  VC2.h
 //  测试不同NavigationControllerPush
 //
 //  Created by vsKing on 2016/11/23.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VC1 : UIViewController
+@interface RY_SecondViewController : UIViewController
 
 @end

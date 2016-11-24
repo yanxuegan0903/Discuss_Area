@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BaseNavigationController.h"
-#import "VC1.h"
+#import "RY_FirstViewController.h"
 
 
 @interface AppDelegate ()
@@ -18,14 +18,14 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)
+    launchOptions
+{
     
-    VC1 * vc1 = [VC1 new];
-    BaseNavigationController * baseNavi = [[BaseNavigationController alloc]initWithRootViewController:vc1];
+    BaseNavigationController * baseNavi = [[BaseNavigationController alloc]initWithRootViewController:[RY_FirstViewController new]];
     
     self.window.rootViewController = baseNavi;
-    
-    
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
