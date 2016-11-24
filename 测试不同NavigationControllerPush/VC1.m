@@ -22,7 +22,7 @@
 {
     [super viewWillAppear:animated];
     
-//    self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
+
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     

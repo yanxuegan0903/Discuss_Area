@@ -26,8 +26,6 @@
     
 }
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -38,6 +36,7 @@
     [self.view addSubview:btn];
     btn.backgroundColor = [UIColor whiteColor];
 //    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
+
     [btn setTitle:@"第三个页面" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     
@@ -46,6 +45,8 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    self.view.backgroundColor = [UIColor grayColor];
 }
 
 /*

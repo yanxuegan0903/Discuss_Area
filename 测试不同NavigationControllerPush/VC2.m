@@ -21,10 +21,8 @@
 {
     [super viewWillAppear:animated];
     
-//    [self.navigationController setNavigationBarHidden:YES];
     self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
-    
-//    self.navigationController.interactivePopGestureRecognizer.delegate =  self;
+
 }
 
 
@@ -50,7 +48,6 @@
     VC3 * vc3 = [VC3 new];
     [self.navigationController pushViewController:vc3 animated:YES];
 }
-
 
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
