@@ -1,21 +1,26 @@
 //
-//  VC1.m
+//  VC3.m
 //  测试不同NavigationControllerPush
 //
-//  Created by vsKing on 2016/11/23.
+//  Created by changle on 2016/11/24.
 //  Copyright © 2016年 vsKing. All rights reserved.
 //
 
-#import "VC1.h"
-#import "VC2.h"
+#import "VC3.h"
 
-
-
-@interface VC1 ()
+@interface VC3 ()<UIGestureRecognizerDelegate>
 
 @end
 
-@implementation VC1
+@implementation VC3
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    
+    self.view.backgroundColor = [UIColor greenColor];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -25,6 +30,10 @@
     //    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
     
     //    self.navigationController.interactivePopGestureRecognizer.delegate =  self;
+    [self.navigationItem setHidesBackButton:YES];
+    [self.navigationItem.backBarButtonItem setTitle:@""];
+    [self.navigationItem setBackBarButtonItem:nil];
+
     
     self.navigationController.navigationBar.translucent = YES;
     CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, 64);
@@ -39,32 +48,18 @@
     self.navigationController.navigationBar.clipsToBounds = YES;
 }
 
-
-- (void)viewDidLoad {
-    [super viewDidLoad];    
-    self.view.backgroundColor = [UIColor redColor];
-    
-    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(50, 50, 80, 45)];
-    [self.view addSubview:btn];
-    btn.backgroundColor = [UIColor whiteColor];
-    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
-    [btn setTitle:@"点我啊" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    
-    
-}
-
-- (void)clickBtn
-{
-    VC2 * vc2 = [VC2 new];
-    [self.navigationController pushViewController:vc2 animated:YES];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if (self.navigationController.viewControllers.count <= 1 ) {
+        return NO;
+    }
+    
+    return YES;
+}
 /*
 #pragma mark - Navigation
 

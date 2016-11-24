@@ -7,7 +7,7 @@
 //
 
 #import "VC2.h"
-
+#import "VC3.h"
 @interface VC2 ()<UIGestureRecognizerDelegate>
 
 @end
@@ -18,19 +18,44 @@
 {
     [super viewWillAppear:animated];
     
-//    [self.navigationController setNavigationBarHidden:YES];
-//    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
-    
-//    self.navigationController.interactivePopGestureRecognizer.delegate =  self;
+    [self.navigationItem.backBarButtonItem setTitle:@""];
+    [self.navigationItem setHidesBackButton:YES];
+    [self.navigationItem setBackBarButtonItem:nil];
+
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+        self.navigationController.navigationBar.translucent = YES;
+    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, 64);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [UIColor clearColor].CGColor)
+    ;
+    CGContextFillRect(context, rect);
+    UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.clipsToBounds = YES;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [self.navigationController setNavigationBarHidden:YES animated:YES];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor yellowColor];
     
+    
+    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(50, 50, 80, 45)];
+    [self.view addSubview:btn];
+    btn.backgroundColor = [UIColor whiteColor];
+    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTitle:@"点我啊" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+}
+
+
+- (void)clickBtn
+{
+    VC3 * vc2 = [VC3 new];
+    [self.navigationController pushViewController:vc2 animated:YES];
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
@@ -45,15 +70,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
