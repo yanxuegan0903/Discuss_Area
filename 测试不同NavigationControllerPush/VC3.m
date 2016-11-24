@@ -1,30 +1,24 @@
 //
-//  VC1.m
+//  VC3.m
 //  测试不同NavigationControllerPush
 //
-//  Created by vsKing on 2016/11/23.
+//  Created by vsKing on 2016/11/24.
 //  Copyright © 2016年 vsKing. All rights reserved.
 //
 
-#import "VC1.h"
-#import "VC2.h"
+#import "VC3.h"
 
-
-
-@interface VC1 ()
+@interface VC3 ()
 
 @end
 
-@implementation VC1
-
+@implementation VC3
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-    
-    
+    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
 }
 
 
@@ -32,28 +26,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor purpleColor];
+    
     
     UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(50, 50, 100, 45)];
     [self.view addSubview:btn];
     btn.backgroundColor = [UIColor whiteColor];
-    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
-    [btn setTitle:@"第一个页面" forState:UIControlStateNormal];
+    //    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTitle:@"第三个页面" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     
-    
-}
-
-- (void)clickBtn
-{
-    VC2 * vc2 = [VC2 new];
-    [self.navigationController pushViewController:vc2 animated:YES];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    self.view.backgroundColor = [UIColor grayColor];
+
+    
+    
+    
+    
 }
 
 /*

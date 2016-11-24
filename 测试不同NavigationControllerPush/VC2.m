@@ -7,6 +7,9 @@
 //
 
 #import "VC2.h"
+#import "VC3.h"
+
+
 
 @interface VC2 ()<UIGestureRecognizerDelegate>
 
@@ -18,10 +21,8 @@
 {
     [super viewWillAppear:animated];
     
-//    [self.navigationController setNavigationBarHidden:YES];
-//    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
-    
-//    self.navigationController.interactivePopGestureRecognizer.delegate =  self;
+    self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
+
 }
 
 
@@ -31,7 +32,21 @@
 //    [self.navigationController setNavigationBarHidden:YES animated:YES];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    
+    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(50, 50, 100, 45)];
+    [self.view addSubview:btn];
+    btn.backgroundColor = [UIColor whiteColor];
+    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTitle:@"第二个页面" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
 }
+
+-(void)clickBtn
+{
+    VC3 * vc = [VC3 new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     if (self.navigationController.viewControllers.count <= 1 ) {

@@ -16,6 +16,7 @@
 		A7D29F791DE590F000A457A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D29F771DE590F000A457A9 /* LaunchScreen.storyboard */; };
 		A7D29F841DE590F000A457A9 /* ____NavigationControllerPushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D29F831DE590F000A457A9 /* ____NavigationControllerPushTests.m */; };
 		A7D29F8F1DE590F000A457A9 /* ____NavigationControllerPushUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D29F8E1DE590F000A457A9 /* ____NavigationControllerPushUITests.m */; };
+		A7FA52E31DE68A2400ABC1B5 /* VC3.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FA52E21DE68A2400ABC1B5 /* VC3.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		A7D29F8A1DE590F000A457A9 /* 测试不同NavigationControllerPushUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "测试不同NavigationControllerPushUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D29F8E1DE590F000A457A9 /* ____NavigationControllerPushUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____NavigationControllerPushUITests.m"; sourceTree = "<group>"; };
 		A7D29F901DE590F000A457A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7FA52E11DE68A2400ABC1B5 /* VC3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC3.h; sourceTree = "<group>"; };
+		A7FA52E21DE68A2400ABC1B5 /* VC3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC3.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				A762C0F21DE591DB0068EDD5 /* VC1.m */,
 				A762C0F71DE594A20068EDD5 /* VC2.h */,
 				A762C0F81DE594A20068EDD5 /* VC2.m */,
+				A7FA52E11DE68A2400ABC1B5 /* VC3.h */,
+				A7FA52E21DE68A2400ABC1B5 /* VC3.m */,
 				A7D29F751DE590F000A457A9 /* Assets.xcassets */,
 				A7D29F771DE590F000A457A9 /* LaunchScreen.storyboard */,
 				A7D29F7A1DE590F000A457A9 /* Info.plist */,
@@ -282,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7FA52E31DE68A2400ABC1B5 /* VC3.m in Sources */,
 				A762C0F61DE592090068EDD5 /* BaseNavigationController.m in Sources */,
 				A7D29F6E1DE590EF00A457A9 /* AppDelegate.m in Sources */,
 				A762C0F31DE591DB0068EDD5 /* VC1.m in Sources */,
