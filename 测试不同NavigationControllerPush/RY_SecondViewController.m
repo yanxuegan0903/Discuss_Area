@@ -7,6 +7,7 @@
 //
 
 #import "RY_SecondViewController.h"
+#import "RY_ThirdViewController.h"
 
 @interface RY_SecondViewController ()<UIGestureRecognizerDelegate>
 
@@ -21,6 +22,15 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor orangeColor];
     self.navigationItem.title = @"Second";
+    
+    //add button
+    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(50, 50, 80, 45)];
+    [self.view addSubview:btn];
+    
+    btn.backgroundColor = [UIColor whiteColor];
+    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTitle:@"点我啊" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     
 }
 
@@ -42,6 +52,12 @@
     }
     
     return YES;
+}
+
+
+-(void)clickBtn
+{
+    [self.navigationController pushViewController:[RY_ThirdViewController new] animated:true];
 }
 
 - (void)didReceiveMemoryWarning {

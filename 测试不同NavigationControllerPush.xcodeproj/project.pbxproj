@@ -16,6 +16,7 @@
 		A7D29F791DE590F000A457A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D29F771DE590F000A457A9 /* LaunchScreen.storyboard */; };
 		A7D29F841DE590F000A457A9 /* ____NavigationControllerPushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D29F831DE590F000A457A9 /* ____NavigationControllerPushTests.m */; };
 		A7D29F8F1DE590F000A457A9 /* ____NavigationControllerPushUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D29F8E1DE590F000A457A9 /* ____NavigationControllerPushUITests.m */; };
+		DB8AB1BD1DE6914E00F99C31 /* RY_ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8AB1BC1DE6914E00F99C31 /* RY_ThirdViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		A7D29F8A1DE590F000A457A9 /* 测试不同NavigationControllerPushUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "测试不同NavigationControllerPushUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D29F8E1DE590F000A457A9 /* ____NavigationControllerPushUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____NavigationControllerPushUITests.m"; sourceTree = "<group>"; };
 		A7D29F901DE590F000A457A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB8AB1BB1DE6914E00F99C31 /* RY_ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RY_ThirdViewController.h; sourceTree = "<group>"; };
+		DB8AB1BC1DE6914E00F99C31 /* RY_ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RY_ThirdViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				A762C0F21DE591DB0068EDD5 /* RY_FirstViewController.m */,
 				A762C0F71DE594A20068EDD5 /* RY_SecondViewController.h */,
 				A762C0F81DE594A20068EDD5 /* RY_SecondViewController.m */,
+				DB8AB1BB1DE6914E00F99C31 /* RY_ThirdViewController.h */,
+				DB8AB1BC1DE6914E00F99C31 /* RY_ThirdViewController.m */,
 				A7D29F751DE590F000A457A9 /* Assets.xcassets */,
 				A7D29F771DE590F000A457A9 /* LaunchScreen.storyboard */,
 				A7D29F7A1DE590F000A457A9 /* Info.plist */,
@@ -286,6 +291,7 @@
 				A762C0F61DE592090068EDD5 /* BaseNavigationController.m in Sources */,
 				A7D29F6E1DE590EF00A457A9 /* AppDelegate.m in Sources */,
 				A762C0F31DE591DB0068EDD5 /* RY_FirstViewController.m in Sources */,
+				DB8AB1BD1DE6914E00F99C31 /* RY_ThirdViewController.m in Sources */,
 				A7D29F6B1DE590EF00A457A9 /* main.m in Sources */,
 				A762C0F91DE594A20068EDD5 /* RY_SecondViewController.m in Sources */,
 			);
