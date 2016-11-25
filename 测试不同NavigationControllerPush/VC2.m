@@ -11,25 +11,43 @@
 
 
 
-@interface VC2 ()<UIGestureRecognizerDelegate>
+@interface VC2 ()<UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 
 @end
 
 @implementation VC2
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+}
+
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+}
+
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
-
+    
+    
+    
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    [self.navigationController setNavigationBarHidden:YES animated:YES];
+
     self.view.backgroundColor = [UIColor whiteColor];
     
     
@@ -41,22 +59,39 @@
     [btn setTitle:@"第二个页面" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     
+    
+    
+    
+    
 }
 
 - (void)clickBtn
 {
     VC3 * vc3 = [VC3 new];
     [self.navigationController pushViewController:vc3 animated:YES];
+    
+//    [self presentViewController:vc3 animated:YES completion:^{
+//        
+//    }];
+    
 }
 
+
+#pragma mark -- gestureDelegate
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    if (self.navigationController.viewControllers.count <= 1 ) {
-        return NO;
-    }
-    
+        
+    return ![gestureRecognizer isKindOfClass:UIScreenEdgePanGestureRecognizer.class];
+}
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
     return YES;
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

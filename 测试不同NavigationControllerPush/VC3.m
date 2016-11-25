@@ -7,6 +7,8 @@
 //
 
 #import "VC3.h"
+#import "VC4.h"
+
 
 @interface VC3 ()
 
@@ -14,15 +16,31 @@
 
 @implementation VC3
 
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
+
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    
+}
+
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     self.navigationController.navigationBar.barTintColor = [UIColor grayColor];
-    
-    
-    
-    
     
 }
 
@@ -32,15 +50,24 @@
     
     self.view.backgroundColor = [UIColor purpleColor];
     
+    
     UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(50, 50, 100, 45)];
     [self.view addSubview:btn];
     btn.backgroundColor = [UIColor whiteColor];
-//    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
-
     [btn setTitle:@"第三个页面" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    
+    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
 }
+
+-(void)clickBtn
+{
+    VC4 * vc = [VC4 new];
+    [self.navigationController pushViewController:vc animated:YES];
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        
+//    }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -8,11 +8,21 @@
 
 #import "BaseNavigationController.h"
 
-@interface BaseNavigationController ()
+@interface BaseNavigationController ()<UINavigationControllerDelegate,UIGestureRecognizerDelegate>
 
 @end
 
 @implementation BaseNavigationController
+
+
+- (void)dealloc
+{
+    self.interactivePopGestureRecognizer.delegate = nil;
+    self.delegate = nil;
+}
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,20 +35,46 @@
     
     
     
-    
-    
-    
-//    UIView * navigationBarView = [[UIView alloc]initWithFrame:self.navigationBar.frame];
-//    navigationBarView.backgroundColor = [UIColor purpleColor];
-//    [self.navigationBar addSubview:navigationBarView];
-    
-    
-    
-    
-    
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)])
+    {
+        self.interactivePopGestureRecognizer.delegate = self;
+        self.delegate = self;
+    }
     
     
 }
+
+
+#pragma mark - Override
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    // Hijack the push method to disable the gesture
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.interactivePopGestureRecognizer.enabled = NO;
+    }
+    
+    [super pushViewController:viewController animated:animated];
+}
+
+#pragma mark - UINavigationControllerDelegate
+
+- (void)navigationController:(UINavigationController *)navigationController
+       didShowViewController:(UIViewController *)viewController
+                    animated:(BOOL)animate
+{
+    if ([navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        if ([navigationController.viewControllers count] == 1) {
+            // Disable the interactive pop gesture in the rootViewController of navigationController
+            navigationController.interactivePopGestureRecognizer.enabled = NO;
+        } else {
+            // Enable the interactive pop gesture
+            navigationController.interactivePopGestureRecognizer.enabled = YES;
+        }
+    }
+}
+
+
+
 
 -(BOOL)shouldAutorotate
 {

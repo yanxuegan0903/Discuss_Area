@@ -11,20 +11,25 @@
 
 
 
-@interface VC1 ()
+@interface VC1 ()<UIGestureRecognizerDelegate>
 
 @end
 
 @implementation VC1
 
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+}
+
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    
     
 }
 
@@ -41,6 +46,40 @@
     [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
     [btn setTitle:@"第一个页面" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    
+//    
+//    NSString * str = @"{\"abcd\":123},{\"abcd\":123}";
+//    NSData * data = [str dataUsingEncoding:NSUTF8StringEncoding];
+//    NSLog(@"data = %@",data);
+//    NSError * err;
+//    NSArray * arr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&err];
+//    
+//    if (err) {
+//        NSLog(@"err == %@",err.localizedDescription);
+//    }else
+//    {
+//        NSLog(@"arr = %@",arr);
+//    }
+//    
+    
+    
+    
+    
+    
+    
+//    NSData * strData = [str dataUsingEncoding:NSASCIIStringEncoding];
+//    NSError * error;
+//    NSArray * arr =  [NSJSONSerialization JSONObjectWithData:strData options:NSJSONReadingMutableContainers error:&error];
+//    
+//    
+//    if (error) {
+//        NSLog(@"error = %@",error.localizedDescription);
+//    }else
+//    {
+//        NSLog(@"arr = %@",arr);
+//    }
+//    
+    
     
     
 }
